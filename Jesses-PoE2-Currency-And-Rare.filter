@@ -1,0 +1,212 @@
+###
+# Description: Filter for Path of Exile 2 to highlight heavily currency with sound and map icons. Rares and small salvagable items shown. Gold under specified values as well as normal and magic items are hidden.
+# Developer: Jesse Read
+# GitHub: https://github.com/JesseReadAu/
+# Version: 0.1 - Testing
+# Updated Date: 2024/12/22
+# Notes: Please log any issues or suggestions through Github. Filter is currently being tested. 
+###
+
+
+
+### ITEMS ###
+Show
+    Rarity Unique
+    SetTextColor 175 96 37 255
+    SetBorderColor 175 96 37 255
+    SetBackgroundColor 0 0 0
+    SetFontSize 35
+    PlayEffect Brown
+    PlayAlertSound 6 300
+    MinimapIcon 1 Brown UpsideDownHouse
+
+## Amulets, Belts and Rings
+Show
+    Class Amulets Belts Rings
+    Rarity Rare
+    SetFontSize 35
+    SetTextColor 233 206 75
+    SetBorderColor 233 206 75
+    PlayEffect Yellow
+    MinimapIcon 1 Yellow Diamond
+
+Show
+    Class Amulets Belts Rings 
+    SetFontSize 30
+
+Show
+    BaseType "Distilled Isolation" "Distilled Suffering"
+    SetFontSize 40
+    SetTextColor 30 144 255 255
+    SetBorderColor 30 144 255 255
+    SetBackgroundColor 255 255 255 255
+    PlayAlertSound 6 300
+    PlayEffect Blue
+    MinimapIcon 1 Blue Raindrop
+
+
+
+## Salvage under 4 slots
+Show
+    Class Claw Dagger Wand Boots Helmet Gloves
+    Sockets > 0
+    SetFontSize 14
+    SetBorderColor 0 0 0
+
+Show
+    Class Claw Dagger Wand Boots Helmet Gloves
+    Quality > 1
+    SetBorderColor 0 0 0
+    SetFontSize 14
+
+
+### CURRENCY ###
+Show
+    Class "Currency"
+    BaseType "Divine" "Mirror" "Perfect Jeweller's Orb"
+    SetFontSize 40
+    SetTextColor 255 0 0 255
+    SetBorderColor 255 0 0 255
+    SetBackgroundColor 221 221 221 255
+    PlayAlertSound 6 300
+    PlayEffect Red
+    MinimapIcon 1 Red Kite
+
+Show
+    Class "Currency"
+    BaseType "Chaos" "Vaal"
+    SetFontSize 35
+    SetTextColor 170 158 130
+    SetBorderColor 170 158 130
+    SetBackgroundColor 255 255 255 255
+    PlayAlertSound 6 300
+    PlayEffect Red
+    MinimapIcon 1 Red Kite
+
+Show
+    Class "Currency"
+    BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Chance Shard" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
+    SetTextColor 170 158 130
+    SetBorderColor 170 158 130
+    PlayAlertSound 6 300
+    PlayEffect White
+    MinimapIcon 2 White Diamond
+    SetFontSize 30
+
+Show
+    Class "Currency"
+    SetFontSize 30
+    SetTextColor 170 158 130
+    SetBorderColor 170 158 130
+    PlayAlertSound 2 300
+    PlayEffect White
+    MinimapIcon 1 White Diamond
+
+### GEMS ###
+Show
+    BaseType "Uncut Support Gem" "Uncut Skill Gem"
+    SetTextColor 255 255 255
+    SetBorderColor 0 0 0
+    SetFontSize 14
+
+
+
+### GOLD ###
+Show
+    BaseType == "Gold"
+    AreaLevel <= 10
+    StackSize >= 20
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType == "Gold"
+    AreaLevel <= 20
+    StackSize >= 50
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType == "Gold"
+    AreaLevel <= 40
+    StackSize >= 100
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType == "Gold"
+    AreaLevel <= 50
+    StackSize >= 150
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType == "Gold"
+    AreaLevel <= 60
+    StackSize >= 200
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType == "Gold"
+    AreaLevel > 60
+    StackSize >= 500
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Hide
+    BaseType == "Gold"
+
+
+
+### WayStones ###
+Show
+BaseType "Waystone"
+    Rarity <= Rare # Not to conflict with Unique
+    SetTextColor 255 255 255
+    SetBorderColor 255 255 255
+    PlayAlertSound 2 300
+    PlayEffect White
+    MinimapIcon 1 White Square
+    SetFontSize 35
+
+Show
+    Class "Tablet"
+    SetTextColor 255 255 255
+    SetBorderColor 255 255 255
+    PlayAlertSound 2 300
+    PlayEffect Blue
+    MinimapIcon 1 Blue Square
+    SetFontSize 35
+
+### Misc ###
+Show
+    BaseType "Breach Ring" "Charm" "Jewel" "Relic" "Soul Core" "Timeless"  
+    MinimapIcon 1 Blue Circle
+
+
+
+### Hide Stuff ###
+Hide
+    BaseType "Scroll of Wisdom"
+    AreaLevel >= 15
+
+Hide 
+    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces" 
+    Rarity <= Magic
+
+Hide
+    Class "Flask"
+
