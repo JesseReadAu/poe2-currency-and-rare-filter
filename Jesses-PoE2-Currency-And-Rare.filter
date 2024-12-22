@@ -2,8 +2,8 @@
 # Description: Filter for Path of Exile 2 to highlight heavily currency and rares with sound and map icons. Gold under specified values as well as normal and rare items not shown.
 # Developer: Jesse Read
 # GitHub: https://github.com/JesseReadAu/
-# Version: 0.1.2 - Testing
-# Updated Date: 2024/12/23
+# Version: 0.1.1 - Testing
+# Updated Date: 2024/12/22
 ###
 
 ### Hide Stuff ###
@@ -212,5 +212,5 @@ Show
 
 ### Hide - End of Script ###
 Hide 
-    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Sceptre" "Shields" "Staves" "Two Hand Maces" "Wands"
+    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Quiver" "Sceptre" "Shields" "Staves" "Two Hand Maces" "Wands"
     Rarity <= Magic
