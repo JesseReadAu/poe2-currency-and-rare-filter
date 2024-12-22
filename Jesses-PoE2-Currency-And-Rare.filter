@@ -2,8 +2,8 @@
 # Description: Filter for Path of Exile 2 to highlight heavily currency and rares with sound and map icons. Gold under specified values as well as normal and rare items not shown.
 # Developer: Jesse Read
 # GitHub: https://github.com/JesseReadAu/
-# Version: 0.1.1 - Testing
-# Updated Date: 2024/12/22
+# Version: 0.1.2 - Testing
+# Updated Date: 2024/12/23
 ###
 
 ### Hide Stuff ###
@@ -11,9 +11,7 @@ Hide
     BaseType "Scroll of Wisdom"
     AreaLevel >= 15
 
-Hide 
-    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces" 
-    Rarity <= Magic
+
 
 Hide
     Class "Flask"
@@ -55,7 +53,11 @@ Show
     PlayEffect Blue
     MinimapIcon 1 Blue Raindrop
 
-
+Show 
+    BaseType "Charm" "Jewels"
+    PlayAlertSound 3 300
+    PlayEffect Pink
+    MinimapIcon 1 Pink Circle
 
 ## Salvage under 4 slots
 Show
@@ -199,9 +201,16 @@ Show
     SetFontSize 35
 
 ### Misc ###
+Hide
+    BaseType "Jewelled Gloves"
+
 Show
-    BaseType "Breach Ring" "Charm" "Jewel" "Relic" "Soul Core" "Timeless"  
-    MinimapIcon 1 Blue Circle
+    BaseType "Breach Ring"  "Relic" "Soul Core" "Timeless"  
+    MinimapIcon 1 Purple Circle
 
 
 
+### Hide - End of Script ###
+Hide 
+    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Sceptre" "Shields" "Staves" "Two Hand Maces" "Wands"
+    Rarity <= Magic
