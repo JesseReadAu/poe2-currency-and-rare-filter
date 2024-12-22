@@ -1,11 +1,22 @@
 ###
-# Description: Filter for Path of Exile 2 to highlight heavily currency with sound and map icons. Rares and small salvagable items shown. Gold under specified values as well as normal and magic items are hidden.
+# Description: Filter for Path of Exile 2 to highlight heavily currency and rares with sound and map icons. Gold under specified values as well as normal and rare items not shown.
 # Developer: Jesse Read
 # GitHub: https://github.com/JesseReadAu/
-# Version: 0.1 - Testing
+# Version: 0.1.1 - Testing
 # Updated Date: 2024/12/22
-# Notes: Please log any issues or suggestions through Github. Filter is currently being tested. 
 ###
+
+### Hide Stuff ###
+Hide
+    BaseType "Scroll of Wisdom"
+    AreaLevel >= 15
+
+Hide 
+    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces" 
+    Rarity <= Magic
+
+Hide
+    Class "Flask"
 
 
 
@@ -58,7 +69,63 @@ Show
     Quality > 1
     SetBorderColor 0 0 0
     SetFontSize 14
+### GOLD ###
+Show
+    BaseType == "Gold"
+    AreaLevel <= 10
+    StackSize >= 20
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
 
+Show
+    BaseType "Gold"
+    AreaLevel <= 20
+    StackSize >= 50
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType "Gold"
+    AreaLevel <= 40
+    StackSize >= 100
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType "Gold"
+    AreaLevel <= 50
+    StackSize >= 150
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType "Gold"
+    AreaLevel <= 60
+    StackSize >= 200
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Show
+    BaseType "Gold"
+    AreaLevel > 60
+    StackSize >= 500
+    SetTextColor 254 213 0
+    SetBorderColor 0 0 0 255
+    SetBackgroundColor 0 0 0 180
+    MinimapIcon 1 Yellow Circle
+
+Hide
+    BaseType "Gold"
 
 ### CURRENCY ###
 Show
@@ -111,66 +178,6 @@ Show
 
 
 
-### GOLD ###
-Show
-    BaseType == "Gold"
-    AreaLevel <= 10
-    StackSize >= 20
-    SetTextColor 254 213 0
-    SetBorderColor 0 0 0 255
-    SetBackgroundColor 0 0 0 180
-    MinimapIcon 1 Yellow Circle
-
-Show
-    BaseType == "Gold"
-    AreaLevel <= 20
-    StackSize >= 50
-    SetTextColor 254 213 0
-    SetBorderColor 0 0 0 255
-    SetBackgroundColor 0 0 0 180
-    MinimapIcon 1 Yellow Circle
-
-Show
-    BaseType == "Gold"
-    AreaLevel <= 40
-    StackSize >= 100
-    SetTextColor 254 213 0
-    SetBorderColor 0 0 0 255
-    SetBackgroundColor 0 0 0 180
-    MinimapIcon 1 Yellow Circle
-
-Show
-    BaseType == "Gold"
-    AreaLevel <= 50
-    StackSize >= 150
-    SetTextColor 254 213 0
-    SetBorderColor 0 0 0 255
-    SetBackgroundColor 0 0 0 180
-    MinimapIcon 1 Yellow Circle
-
-Show
-    BaseType == "Gold"
-    AreaLevel <= 60
-    StackSize >= 200
-    SetTextColor 254 213 0
-    SetBorderColor 0 0 0 255
-    SetBackgroundColor 0 0 0 180
-    MinimapIcon 1 Yellow Circle
-
-Show
-    BaseType == "Gold"
-    AreaLevel > 60
-    StackSize >= 500
-    SetTextColor 254 213 0
-    SetBorderColor 0 0 0 255
-    SetBackgroundColor 0 0 0 180
-    MinimapIcon 1 Yellow Circle
-
-Hide
-    BaseType == "Gold"
-
-
-
 ### WayStones ###
 Show
 BaseType "Waystone"
@@ -197,16 +204,4 @@ Show
     MinimapIcon 1 Blue Circle
 
 
-
-### Hide Stuff ###
-Hide
-    BaseType "Scroll of Wisdom"
-    AreaLevel >= 15
-
-Hide 
-    Class "Body Armours" "Boots" "Bows" "Crossbows" "Focus" "Gloves" "Helmets" "One Hand Maces" "Quarterstaves" "Shields" "Two Hand Maces" 
-    Rarity <= Magic
-
-Hide
-    Class "Flask"
 
